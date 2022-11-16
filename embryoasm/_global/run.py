@@ -659,7 +659,7 @@ class EmbryoASMLevel7(EmbryoASMBase):
         bits around in a register. Take for instance, rax. For the sake of this example
         say rax only can store 8 bits (it normally stores 64). The value in rax is:
         rax = 10001010
-        We if we shift the value once to the left:
+        If we shift the value once to the left:
         shl rax, 1
         The new value is:
         rax = 00010100
