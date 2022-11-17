@@ -990,7 +990,7 @@ class EmbryoASMLevel13(EmbryoASMBase):
         mov al, [address+4]
         Remember, offsets start at 0.
 
-        Preform the following:
+        Perform the following:
         1. load two consecutive quad words from the address stored in rdi
         2. calculate the sum of the previous steps quad words.
         3. store the sum at the address in rsi
