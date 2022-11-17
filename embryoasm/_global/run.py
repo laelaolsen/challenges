@@ -1203,7 +1203,7 @@ class EmbryoASMLevel17(EmbryoASMBase):
         5. jmp to the absolute address {hex(self.LIB_ADDR)}
 
         We will now set the following in preparation for your code:
-        - Loading your given gode at: {hex(self.CODE_ADDR)}
+        - Loading your given code at: {hex(self.CODE_ADDR)}
         - (stack) [{hex(self.RSP_INIT - 0x8)}] = {hex(self.init_mem_rsp)}
         """
 
