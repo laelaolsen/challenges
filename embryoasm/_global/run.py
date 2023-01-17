@@ -659,7 +659,7 @@ class EmbryoASMLevel7(EmbryoASMBase):
         bits around in a register. Take for instance, rax. For the sake of this example
         say rax only can store 8 bits (it normally stores 64). The value in rax is:
         rax = 10001010
-        We if we shift the value once to the left:
+        If we shift the value once to the left:
         shl rax, 1
         The new value is:
         rax = 00010100
@@ -990,7 +990,7 @@ class EmbryoASMLevel13(EmbryoASMBase):
         mov al, [address+4]
         Remember, offsets start at 0.
 
-        Preform the following:
+        Perform the following:
         1. load two consecutive quad words from the address stored in rdi
         2. calculate the sum of the previous steps quad words.
         3. store the sum at the address in rsi
@@ -1203,7 +1203,7 @@ class EmbryoASMLevel17(EmbryoASMBase):
         5. jmp to the absolute address {hex(self.LIB_ADDR)}
 
         We will now set the following in preparation for your code:
-        - Loading your given gode at: {hex(self.CODE_ADDR)}
+        - Loading your given code at: {hex(self.CODE_ADDR)}
         - (stack) [{hex(self.RSP_INIT - 0x8)}] = {hex(self.init_mem_rsp)}
         """
 
