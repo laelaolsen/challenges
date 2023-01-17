@@ -1039,10 +1039,10 @@ class EmbryoASMLevel14(EmbryoASMBase):
         Top ----> Blue
                   Green
         Bottom -> Red
-        Now if wanted a plate to make a sandwhich we would retrive the top plate from the stack
+        Now if we wanted a plate to make a sandwich we would retrieve the top plate from the stack
         which would be the blue one that was last into the cabinet, ergo the first one out.
 
-        Subtract rdi from the top value on the stack.
+        Replace the top value of the stack with (top value of the stack - rdi).
 
         We will now set the following in preparation for your code:
         rdi = {hex(self.init_rdi)}
@@ -1658,20 +1658,26 @@ class EmbryoASMLevel22(EmbryoASMBase):
         The "ret" instruction is the opposite of "call". ret pops the top value off of
         the stack and jumps to it.
         Let's use the following instructions and stack as an example:
+
                                     Stack ADDR  VALUE
         0x103f mov rax, rdx         RSP + 0x8   0xdeadbeef
         0x1042 ret                  RSP + 0x0   0x0000102a
         ret will jump to 0x102a
+
         Please implement the following logic:
         str_lower(src_addr):
             rax = 0
             if src_addr != 0:
-                while [src_addr] != 0x0:
-                    if [src_addr] <= 90:
+                while [src_addr] != 0x00:
+                    if [src_addr] <= 0x5a:
                         [src_addr] = foo([src_addr])
                         rax += 1
                     src_addr += 1
         foo is provided at {hex(self.LIB_ADDR)}. foo takes a single argument as a value
+
+        An important note is that src_addr is an address in memory (where the string is located) and [src_addr] refers to the byte that exists at src_addr.
+
+        Therefore, the function foo excepts a byte as its first argument, and returns a byte.
 
         We will now run multiple tests on your code, here is an example run:
         - (data) [{hex(self.DATA_ADDR)}] = {{10 random bytes}},
