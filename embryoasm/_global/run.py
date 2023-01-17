@@ -930,7 +930,7 @@ class EmbryoASMLevel12(EmbryoASMBase):
         1. set [rdi] = {hex(self.target_mem_rdi)}
         2. set [rsi] = {hex(self.target_mem_rsi)}
         Hint: it may require some tricks to assign a big constant to a dereferenced register. Try setting
-        a register to the constant than assigning that register to the derefed register.
+        a register to the constant then assigning that register to the derefed register.
 
         We will now set the following in preparation for your code:
         [{hex(self.init_rdi)}] = 0xffffffffffffffff
